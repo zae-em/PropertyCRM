@@ -15,4 +15,5 @@ const LeadSchema = new Schema({
   lastActivity: { type: Date, default: Date.now }
 }, { timestamps: true })
 
-export default mongoose.models.Lead || mongoose.model('Lead', LeadSchema)
+const Lead = mongoose.models.Lead || mongoose.model('Lead', LeadSchema)
+export default Lead as mongoose.Model<any>

@@ -8,4 +8,5 @@ const UserSchema = new Schema({
   phone: { type: String }
 }, { timestamps: true })
 
-export default mongoose.models.User || mongoose.model('User', UserSchema)
+const User = mongoose.models.User || mongoose.model('User', UserSchema)
+export default User as mongoose.Model<any>

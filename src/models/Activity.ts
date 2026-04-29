@@ -8,4 +8,5 @@ const ActivitySchema = new Schema({
   performedByName: { type: String }
 }, { timestamps: true })
 
-export default mongoose.models.Activity || mongoose.model('Activity', ActivitySchema)
+const Activity = mongoose.models.Activity || mongoose.model('Activity', ActivitySchema)
+export default Activity as mongoose.Model<any>
